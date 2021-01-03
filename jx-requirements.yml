@@ -1,0 +1,46 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+cluster:
+  clusterName: "jx-demo"
+  devEnvApprovers: []
+  environmentGitOwner: ""
+  project: "jenkinsx-demo-300306"
+  provider: gke
+  zone: "us-central1-a"
+gitops: true
+environments:
+- key: dev
+- key: staging
+- key: production
+ingress:
+  domain: ""
+  externalDNS: false
+  tls:
+    email: ""
+    enabled: false
+    production: true
+kaniko: true
+storage:
+  backup:
+    enabled: false
+  logs:
+    enabled: true
+    url: gs://logs-jx-demo-5d3f29d280e7
+  reports:
+    enabled: true
+    url: gs://reports-jx-demo-5d3f29d280e7
+  repository:
+    enabled: true
+    url: gs://repository-jx-demo-5d3f29d280e7
+secretStorage: vault
+vault:
+  name: jx-demo
+  bucket: vault-jx-demo-5d3f29d280e7
+  key: crypto-key-jx-demo-5d3f29d280e7
+  keyring: keyring-jx-demo-5d3f29d280e7
+  serviceAccount: jx-demo-vt
+versionStream:
+  ref: master
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: "lighthouse"

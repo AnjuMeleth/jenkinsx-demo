@@ -4,3 +4,6 @@ module "jx" {
   gcp_project = "jenkinsx-demo-300306"
   cluster_name = "jx-demo"  
 }
+output "jx_requirements" {
+  value = module.jx.jx_requirements
+}
